@@ -10,7 +10,9 @@ def contacto(request):
             nombre = request.POST.get("nombre")
             email = request.POST.get("email")
             contenido = request.POST.get("contenido")
-            email = EmailMessage("Mensaje desde App Django","El usuario con nombre {} con la dirección {} te escribe lo siguiente: \n\n {}".format(nombre,email,contenido), "", ["zeitgeist.tt008@gmail.com"],reply_to=[email])
+            email = EmailMessage("Mensaje desde App Django",
+            "El usuario con nombre {} con la dirección {} te escribe lo siguiente: \n\n {}".format(nombre,email,contenido),
+            "", ["zeitgeist.tt008@gmail.com"],reply_to=[email])
             try:
                 email.send()
                 return redirect('/contacto/?valido') #pasando URL desde GET (Cuando se hizo bien el post, y ahora se hace un get (reinicia la pagina) para decir que todos los datos se guaradon correctamente)
