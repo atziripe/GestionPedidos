@@ -4,4 +4,25 @@
 
 {% block content %}
 
+    
+    <div class="container">
+    <br></br>
+    <div class="row">
+        {% for producto in productos%}
+        <div class="col">
+            <div class="card" style="width: 15rem;">
+                <img src="{{producto.imagen.url}}"  class="card-img-top" class="width: 50%">
+                <div class="card-body">
+                    <h5 class="card-title">{{producto.nombre}}</h5>
+                    <p class="card-text">${{producto.precio}} MXN</p>
+                    <a href="#" class="btn btn-success">Ver detalles</a>
+                </div>
+            </div>
+            <br></br> 
+        </div>  
+        {% endfor %}
+    </div>
+</div>
+
+
 {% endblock %}
